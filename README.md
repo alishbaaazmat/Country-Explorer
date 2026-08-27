@@ -104,7 +104,7 @@ Then open `index.html` in your browser, or use the **Live Server** extension in 
 
 ## 🌐 Live Demo
 
-_Coming soon — link will be added after deployment._
+🔗 [Country Explorer](https://alishbaaazmat.github.io/Country-Explorer/)
 
 ---
 
