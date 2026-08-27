@@ -94,7 +94,7 @@ country-explorer/
 ### Run Locally
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/country-explorer.git
+git clone https://github.com/alishbaaazmat/Country-Explorer.git
 cd country-explorer
 ```
 
