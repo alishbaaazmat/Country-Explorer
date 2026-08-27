@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Country Explorer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <header class="navbar">
+        <div class="container navbar-content">
+
+            <a href="#" class="logo">
+                <span class="logo-icon">🌍</span>
+                <span>Country Explorer</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="#countries">Explore</a>
+                <a href="#about">About</a>
+                <a href="https://github.com/" target="_blank">GitHub</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- ==================== HERO ==================== -->
+        <section class="hero">
+            <div class="container hero-content">
+
+                <p class="hero-label">WORLD AT YOUR FINGERTIPS</p>
+
+                <h1>
+                    Explore the World,
+                    <span>One Country at a Time.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Discover countries, capitals, regions, populations,
+                    currencies and more from around the globe.
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- ==================== SEARCH & FILTER ==================== -->
+        <section class="explore-controls">
+            <div class="container">
+
+                <div class="search-wrapper">
+                    <span class="search-icon">⌕</span>
+
+                    <input
+                        type="text"
+                        id="search-input"
+                        placeholder="Search for a country..."
+                        autocomplete="off"
+                    >
+                </div>
+
+
+                <div class="filter-section">
+
+                    <div class="filter-heading">
+                        <h2>Explore by Region</h2>
+                    </div>
+
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-region="all">
+                            All
+                        </button>
+
+                        <button class="filter-btn" data-region="Africa">
+                            Africa
+                        </button>
+
+                        <button class="filter-btn" data-region="Americas">
+                            Americas
+                        </button>
+
+                        <button class="filter-btn" data-region="Asia">
+                            Asia
+                        </button>
+
+                        <button class="filter-btn" data-region="Europe">
+                            Europe
+                        </button>
+
+                        <button class="filter-btn" data-region="Oceania">
+                            Oceania
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ==================== STATISTICS ==================== -->
+        <section class="statistics" id="about">
+            <div class="container">
+
+                <h2 class="section-title">World at a Glance</h2>
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+                        <div class="stat-icon">🌍</div>
+                        <div>
+                            <span class="stat-number" id="country-count">—</span>
+                            <span class="stat-label">Countries</span>
+                        </div>
+                    </div>
+
+
+                    <div class="stat-card">
+                        <div class="stat-icon">🗺️</div>
+                        <div>
+                            <span class="stat-number" id="region-count">—</span>
+                            <span class="stat-label">Regions</span>
+                        </div>
+                    </div>
+
+
+                    <div class="stat-card">
+                        <div class="stat-icon">💱</div>
+                        <div>
+                            <span class="stat-number" id="currency-count">—</span>
+                            <span class="stat-label">Currencies</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ==================== COUNTRIES ==================== -->
+        <section class="countries-section" id="countries">
+            <div class="container">
+
+                <div class="countries-header">
+
+                    <div>
+                        <p class="section-label">DISCOVER</p>
+                        <h2 class="section-title">Countries</h2>
+                    </div>
+
+                    <p class="results-count" id="results-count">
+                        Loading...
+                    </p>
+
+                </div>
+
+
+                <!-- Loading State -->
+                <div class="state-container" id="loading-state">
+
+                    <div class="loader"></div>
+
+                    <h3>Loading countries...</h3>
+
+                    <p>
+                        We're fetching the latest country information.
+                    </p>
+
+                </div>
+
+
+                <!-- Error State -->
+                <div class="state-container error-state hidden" id="error-state">
+
+                    <div class="state-icon">⚠️</div>
+
+                    <h3>Unable to load countries</h3>
+
+                    <p>
+                        Something went wrong while fetching the country data.
+                        Please try again.
+                    </p>
+
+                    <button class="retry-btn" id="retry-btn">
+                        Try Again
+                    </button>
+
+                </div>
+
+
+                <!-- Empty Search State -->
+                <div class="state-container empty-state hidden" id="empty-state">
+
+                    <div class="state-icon">🔍</div>
+
+                    <h3>No countries found</h3>
+
+                    <p>
+                        Try searching for another country or changing the filter.
+                    </p>
+
+                </div>
+
+
+                <!-- Country Cards -->
+                <div class="countries-grid" id="countries-grid">
+                    <!-- Country cards will be generated by JavaScript -->
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- ==================== COUNTRY DETAILS MODAL ==================== -->
+    <div class="modal-overlay hidden" id="modal-overlay">
+
+        <div class="country-modal">
+
+            <button class="modal-close" id="modal-close">
+                &times;
+            </button>
+
+            <div id="modal-content">
+                <!-- Country details will be inserted here -->
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <p>
+                🌍 Country Explorer
+            </p>
+
+            <p>
+                Built with HTML, CSS & JavaScript
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
